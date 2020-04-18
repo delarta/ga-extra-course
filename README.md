@@ -1,6 +1,10 @@
-## React Hooks Demo
+# React Hooks Demo
 
-# How To Run
+## Quick Start
 
-`npm i`
-`npm start`
+``` 
+npm install
+
+npm start
+
+```

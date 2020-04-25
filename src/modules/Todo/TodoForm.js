@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { addTodos } from "../../redux/actions/todos"
+import {connect} from "react-redux";
 
-export default function TodoForm(props) {
-  const [title, setTitle] = useState("");
+function TodoForm(props) {
+  const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addTodo(title, date);
-    setTitle("");
-    setDate("");
+    
+    props.addTodos(description);
+    
+    setDescription("");
   };
 
   return (
     <div className="mt-3 mb-5">
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="title">Title</Label>
+          <Label htmlFor="description">Title</Label>
           <Input
             type="text"
-            name="title"
-            id="title"
+            name="description"
+            id="description"
             placeholder="Enter Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </FormGroup>
-        <FormGroup>
+        {/* <FormGroup>
           <Label htmlFor="date">Date</Label>
           <Input
             type="date"
@@ -36,9 +39,17 @@ export default function TodoForm(props) {
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
-        </FormGroup>
+        </FormGroup> */}
         <Button>Add Todo</Button>
       </Form>
     </div>
   );
 }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addTodos: (description) => dispatch(addTodos(description))
+//   }
+// }
+
+export default connect(null, { addTodos })(TodoForm)

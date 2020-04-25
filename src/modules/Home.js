@@ -22,7 +22,7 @@ export default function Home(props) {
         </NavItem>
       </Nav>
 
-        <h1>Welcome {history.location.state.username}</h1>
+        <h1>Welcome</h1>
     </div>
   )
 }

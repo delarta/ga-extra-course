@@ -11,9 +11,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
         <Switch>
           <Route exact path="/todo-function">
             <TodoPage />

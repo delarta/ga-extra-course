@@ -2,33 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Container, Row, Col, Alert } from "reactstrap";
 import TodoForm from "./TodoForm";
 import TodoUpdate from "./TodoUpdate";
-export default function TodoPage() {
+
+import { connect } from "react-redux";
+
+import { getAllTodos } from "../../redux/actions/todos";
+
+function TodoPage(props) {
   const [visible, setVisible] = useState(false);
 
   const [alert, setAlert] = useState(false);
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "Task 1",
-      date: "2020-04-02",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Task 2",
-      date: "2020-04-03",
-
-      completed: true,
-    },
-    {
-      id: 3,
-      title: "Task 3",
-      date: "2020-04-01",
-
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const handleAdd = (title, date) => {
     const newTodo = {
@@ -41,12 +25,20 @@ export default function TodoPage() {
   };
 
   useEffect(() => {
-    setAlert(true);
+    props.getAllTodos();
+  }, []);
 
-    setTimeout(() => {
-      setAlert(false);
-    }, 2000);
-  }, [todos]);
+  useEffect(() => {
+    setTodos(props.todos);
+  }, [props.todos]);
+
+  // useEffect(() => {
+  //   setAlert(true);
+
+  //   setTimeout(() => {
+  //     setAlert(false);
+  //   }, 2000);
+  // }, [todos]);
 
   return (
     <Container className="pt-3 pb-5">
@@ -61,17 +53,15 @@ export default function TodoPage() {
           <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Due</th>
             <th>Completed</th>
           </tr>
         </thead>
         <tbody>
           {todos.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.title}</td>
-              <td>{item.date}</td>
-              <td>{item.completed ? "True" : "False"}</td>
+            <tr key={item._id}>
+              <td>{item.description}</td>
+              <td>{new Date(item.createdAt).toDateString()}</td>
+              <td>{item.done ? "True" : "False"}</td>
             </tr>
           ))}
         </tbody>
@@ -85,3 +75,9 @@ export default function TodoPage() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  todos: state.todos.data,
+});
+
+export default connect(mapStateToProps, { getAllTodos })(TodoPage);

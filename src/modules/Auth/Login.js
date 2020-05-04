@@ -7,77 +7,46 @@ import {
   Label,
   Button,
   Container,
-  Card,
-  CardBody,
   Row,
   Col,
 } from "reactstrap";
+import axios from "axios"
 
 export default function Login(props) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push({
-      pathname: `/`,
-      state: {
-        username,
+    axios({
+      url: "http://localhost:8000/user/login",
+      method: "POST",
+      data: {
+        email,
+        password
       },
-    });
+      headers: {
+        "Content-Type" : "application/json"
+      }
+    })
+    .then(res => {
+      // to store token data from backend, use localStorage.
+      // localStorage will "save" your data in browser as long as you don't clear it
+      // setItem method is to set the variable inside localStorage, it takes 2 parameter, key and value
+      localStorage.setItem("token", res.data);
+
+      // redirect you to component that has route path === /
+      history.push("/");
+    })
+    .catch(err => {
+      console.log("fail")
+    })
   };
 
   return (
     <div>
-      {/* <Container
-        
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh"
-        }}
-      >
-        <Card className="w-50">
-          <CardBody>
-          <Form onSubmit={handleSubmit} >
-          <h1 className="mb-5">Sign In</h1>
-          <FormGroup>
-            <Input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="checkbox" /> Remember Me
-            </Label>
-          </FormGroup>
-          <Button block color="primary" className="mt-3">
-            Sign In
-          </Button>
-        </Form>
-     
-          </CardBody>
-        </Card>
-     
-      </Container> */}
 
       <Row style={{ height: "100vh" }} className="no-gutters">
         <Col lg={8}>
@@ -114,12 +83,12 @@ export default function Login(props) {
               <h1 className="mb-5">Sign In</h1>
               <FormGroup>
                 <Input
-                  type="text"
-                  name="username"
-                  id="username"
+                  type="email"
+                  name="email"
+                  id="email"
                   placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>

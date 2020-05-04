@@ -7,11 +7,22 @@ import LoginPage from "./modules/Auth/Login"
 import Home from "./modules/Home"
 import MoviesPage from "./modules/Movies/MoviesPage";
 import MovieDetail from "./modules/Movies/MovieDetail";
+import HeroesPage from "./modules/Heroes/HeroesPage";
+
 function App() {
   return (
     <div className="App">
       <Router>
+      
         <Switch>
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+
+          <Route exact path="/heroes">
+            <HeroesPage />
+          </Route>
+
           <Route exact path="/todo-function">
             <TodoPage />
           </Route>

@@ -1,0 +1,75 @@
+@import '~antd/dist/antd.css';
+
+.home{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.cart-content {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1em;
+}
+
+/* PRODUCTS */
+
+.products-container {
+  padding: 1em;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 5px;
+}
+.product-item {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 5px;
+}
+.product-item:hover {
+  background-color: rgb(236, 236, 236);
+  border: 1px solid rgb(211, 211, 211);
+  cursor: pointer;
+}
+
+/* CART */
+
+.cart-items{
+  padding: 1em;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 5px;
+}
+
+.checkout-btn{
+  background-color: teal;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 0;
+}
+
+/* NAVBAR */
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.navbar .menu{
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,37 +1,33 @@
 import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TodoPage from "./modules/Todo/TodoPage";
-import TodoClass from "./modules/Todo/TodoClass";
-import LoginPage from "./modules/Auth/Login"
 import Home from "./modules/Home"
-import MoviesPage from "./modules/Movies/MoviesPage";
-import MovieDetail from "./modules/Movies/MovieDetail";
+
+import "./assets/css/style.css";
+import CartClass from "./modules/CartClass";
+import CartHooks from "./modules/CartHooks";
+import Header from "./components/Header";
+import CartAnt from "./modules/CartAnt";
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
+        <Header />
         <Switch>
-          <Route exact path="/todo-function">
-            <TodoPage />
+          <Route exact path="/cart-class">
+            <CartClass />
           </Route>
-
-          <Route exact path="/todo-class">
-            <TodoClass />
+          <Route exact path="/cart-hooks">
+            <CartHooks />
           </Route>
-
-          <Route exact path="/movies">
-            <MoviesPage />
+          
+          <Route exact path="/cart-ant">
+            <CartAnt />
           </Route>
-          <Route exact path="/movies/detail">
-            <MovieDetail />
-          </Route>
-
+          
           <Route exact path="/">
-            <Home/>
+            <Home />
           </Route>
         </Switch>
       </Router>

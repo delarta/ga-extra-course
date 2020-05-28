@@ -1,9 +1,4 @@
-# React Hooks Demo
+# CSS Fundamental
 
 ## Quick Start
 
-``` 
-npm install
-
-npm start
-```

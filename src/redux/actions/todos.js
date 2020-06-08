@@ -1,5 +1,5 @@
 import axios from "axios";
-const urlAPI = "http://localhost:5000";
+const urlAPI = "https://jsonplaceholder.typicode.com";
 
 export const getAllTodos = () => {
   return (dispatch) => {
@@ -12,7 +12,6 @@ export const getAllTodos = () => {
       },
     })
       .then((res) => {
-        console.log(res);
         dispatch({
           type: "GET_TODOS",
           payload: res.data,
@@ -22,25 +21,32 @@ export const getAllTodos = () => {
   };
 };
 
-export const addTodos = (description) => {
-  return dispatch => {
-    axios({
-      url: `${urlAPI}/todos/add`,
-      method: "POST",
-      data: {
-        description
-      },
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then(res => {
-      console.log(res)
-      dispatch({
-        type: "ADD_TODOS",
-        payload: res.data.data
-      })
-    })
-    .catch(err => console.log(err.response))
-  }
+export const addTodos = (title) => {
+  return (dispatch) => {
+    dispatch({
+      type: "ADD_TODOS",
+      payload: title,
+    });
+    return { success: true };
+  };
+};
+
+export const updateTodo = ({ id, title, completed }) => {
+  return (dispatch) => {
+    dispatch({
+      type: "UPDATE_TODO",
+      payload: { id, title, completed },
+    });
+    console.log(completed);
+    return { success: true };
+  };
+};
+export const deleteTodo = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: "DELETE_TODO",
+      payload: { id },
+    });
+    return { success: true };
+  };
 };

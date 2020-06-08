@@ -1,4 +1,4 @@
-# React Hooks Demo
+# React & Redux Class Component ToDo Demo
 
 ## Quick Start
 

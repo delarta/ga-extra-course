@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*, ::before, ::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+
+}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+
+.container{
+  max-width: 312px;
+  /* padding: 0 16px; */
+  margin: 0 auto;
+}
+
+/* Nav */
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: transparent;
+  width: 100vw;
+  /* position: relative; */
+}
+
+.navbar .menu{
+  padding: 0 16px;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  background-color: #ffffff;
+  height: calc(100vh - 72px);
+  width: 100%;
+  display: none;
+}
+
+.navbar .menu ul{
+  list-style: none;
+}
+
+.navbar .menu ul li{
+  display: block;
+  padding: 0.2rem 0;
+}
+
+/* HERO */
+#hero{
+  
+  height: 50vh;
+  background-image: url('./donut_super_smooth.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center ;
+}
+
+#hero .greetings{
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+
+#about{
+  padding: 20px;
+  font-size: 1rem;
+}
+
+h1{
+  font-size: 1.5rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
+.before-about{
+  font-size: 2rem;
+}
+
+hr.hr-menu{
+  margin-bottom: 8px;
+}
+
+.hamburger-menu{
+  border: none;
+  background-color: transparent;
+}

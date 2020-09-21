@@ -3,12 +3,20 @@
 let monsters = [
   "Kikimore", //value
   "Vampire", 
-  "Ekkimara", "Nightwraith", "Werewolf"]
+  "Ekkimara", 
+  "Nightwraith", 
+  "Werewolf",
+  "Bob"
+]
+
+// console.log(monsters.length)
 
 // FOR Loops
 // for (let i = 0; i < monsters.length; i++) {
-//   console.log(`${i+1}. ${monsters[i]}`)
+//   console.log(i , monsters[i])
 // }
+
+
 
 
 
@@ -21,18 +29,18 @@ let monsters = [
 // WHILE Loop
 let x = 0
 
-// while (x < monsters.length) {
+// while (x < 0) {
 //   console.log(`${x+1}. ${monsters[x]}`)
-//   x++
+//   x++;
 // }
 
 // DO WHILE
 let y = 0
 
-// do {
-//   console.log(`${y+1}. ${monsters[y]}`)
-//   y++
-// } while (y < 0)
+do {
+  console.log(`${y+1}. ${monsters[y]}`) // y = 0
+  y++ // y = 0
+} while (y < 0) // y = 1
 
 // FOR OF
 
@@ -42,6 +50,6 @@ let y = 0
 
 
 // HIGHER ORDER 
-monsters.map(
-  (item, index) => { console.log(`${index+1} ${item}`) }
-)
+// monsters.map(
+//   (item, index) => { console.log(`${index+1} ${item}`) }
+// )

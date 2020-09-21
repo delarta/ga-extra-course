@@ -1,14 +1,12 @@
-
 // VARIABLES
-var newVar = "x"
+var newVar = "x";
 
-let newVar2 = "x"
-const newVar3 = "x"
+let newVar2;
+const newVar3 = "x";
 
 // Primitive data types : Number, String, Boolean, Symbol
 // Special types : null, undefined
 // Anything that's not primitive type is Object Types
-
 
 // NUMBER
 // Every Number is a float, but depend on the writting
@@ -16,33 +14,33 @@ const newVar3 = "x"
 // 1.5 , 4.0 float
 // 4 integer
 
-// Integer  
-let num = 10
+// Integer
+let num = 10;
 
 // Float
-let otherNum = 3.14
-
+let otherNum = 3.14;
 
 // STRINGS
 // Regular String
-let str = 'Life'
+let str = "Life";
 
 // Joined String
-let strJoined = str + ' is Beautiful '
+let strJoined = str + " is Beautiful ";
 
+// let otherStr = "Don't give up, " + strJoined + " " + num;
 
 // Template Literal
+// Backtick ``
+let otherStr = `Don't give up, ${strJoined} ${num}`;
 
-let otherStr = `Don't give up, ${strJoined} ${num}`
-
+// console.log(otherStr)
 
 // BOOLEAN (true, false)
-let isOpen = true
+let isOpen = true;
 
-// 
+//
 // Falsy values are : 0, -0, NaN, undefined, null, ''
-let isTrue = 0
-
+let isTrue = "";
 
 // if(isTrue){
 //   console.log("Sesuatu")
@@ -52,11 +50,11 @@ let isTrue = 0
 
 // NULL
 // is a special value that indicates the absence of a value.
-let something = null
+let something = null;
 
 // UNDEFINED
 // indicates that a variable has not been initialized and the value is absent.
-let whoami
+let whoami;
 
 // OBJECT
 
@@ -65,15 +63,20 @@ let person = {
   age: 19,
   country: "England",
   married: true,
-  friends: ["Caesar Zeppeli", "Lisa Lisa" ,"Speedwagon"],
+  friends: ["Caesar Zeppeli", "Lisa Lisa", "Speedwagon"],
   address: {
     city: "London",
-    block: 14
-  }
-}
+    block: 14,
+  },
+};
 
+console.log(`${person.name} lives in ${person.address.city}`);
 
 // ARRAY
-let monsters = [ "Kikimore", 0, {key: "value"}, null, "werewolf" ]
-
-
+let monsters = [
+  "Kikimore", 
+  0, 
+  { key: "value" }, 
+  null, 
+  "werewolf"
+];

@@ -1,34 +1,34 @@
 // Make decision based on condition
 
 // IF statement
-let animal = "cat";
+let animal = "goat";
+let breed = "anggora";
 
+if (animal === "cat") {
+  console.log("Feed Me Hooman!");
 
-// if (animal === "cat") {
-//   console.log("Feed Me Hooman!");
-// } else if (animal === "dog") {
-//   console.log("Play With Me Hooman!");
-// } else {
-//   console.log(`I don't know what to do with ${animal}`);
-// }
+  if(breed === "persian"){
+    console.log("I'm Persian!");
+  }
+
+} else if (animal === "dog") {
+  console.log("Play With Me Hooman!");
+} else {
+  console.log(`I don't know what to do with ${animal}`);
+}
 
 // SWITCH Statement
 
-switch("cat"){
-  case "cat": {
-    let result = 1 + 2;
-    return console.log("Cat!");
-  }
-  case "dog": {
-    return console.log("Dog!");
-  }
-  default: 
-    return console.log("I don't know!");
+switch (animal) {
+  case "cat":
+    console.log("Feed Me Hooman!");
+    break;
+  case "dog":
+    console.log("Play With Me Hooman!");
+    break;
+  default:
+    console.log(`I don't know what to do with ${animal}`);
 }
-
-
-
-
 
 // switch (animal) {
 //   case "cat": {

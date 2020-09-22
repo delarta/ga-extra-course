@@ -50,7 +50,7 @@ class CartClass extends Component {
         <div className="cart-content">
           <div className="products-container">
             <h2>
-              <strong>Products</strong>
+              <strong>Products (CLASS)</strong>
             </h2>
             <div className="products-list">
               {this.state.products.length ? (

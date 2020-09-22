@@ -43,7 +43,7 @@ function CartHooks() {
         <div className="cart-content">
           <div className="products-container">
             <h2>
-              <strong>Products</strong>
+              <strong>Products (HOOKS)</strong>
             </h2>
             <div className="products-list">
               {products.length ? (

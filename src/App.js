@@ -1,36 +1,33 @@
 import React from "react";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./modules/Home"
-
 import "./assets/css/style.css";
-import CartClass from "./modules/CartClass";
-import CartHooks from "./modules/CartHooks";
-import Header from "./components/Header";
-import CartAnt from "./modules/CartAnt";
+
+import PortfolioPage from "./modules/Portfolio/PortfolioPage";
+import ContactPage from "./modules/Portfolio/Contact";
+import AboutPage from "./modules/Portfolio/About";
+import Illustration from "./modules/Portfolio/Illustration";
+import UIDesigns from "./modules/Portfolio/UIDesigns";
+
+import NavigationBar from "./modules/Portfolio/NavigationBar";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import IllustrationDetails from "./modules/Portfolio/IllustrationDetails";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
+      <BrowserRouter>
+        <NavigationBar />
         <Switch>
-          <Route exact path="/cart-class">
-            <CartClass />
-          </Route>
-          <Route exact path="/cart-hooks">
-            <CartHooks />
-          </Route>
-          
-          <Route exact path="/cart-ant">
-            <CartAnt />
-          </Route>
-          
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route exact path="/" component={PortfolioPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/illustration" component={Illustration} />
+          <Route path="/uidesign" component={UIDesigns} />
+
+          <Route path="/illustration/:id" component={IllustrationDetails} />
+
         </Switch>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

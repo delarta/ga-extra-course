@@ -1,13 +1,13 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
-.home{
+.home {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cart-container{
+.cart-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -43,13 +43,13 @@
 
 /* CART */
 
-.cart-items{
+.cart-items {
   padding: 1em;
   border: 1px solid rgb(167, 167, 167);
   border-radius: 5px;
 }
 
-.checkout-btn{
+.checkout-btn {
   background-color: teal;
   width: 100%;
   border: none;
@@ -60,7 +60,7 @@
 
 /* NAVBAR */
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   width: 90vw;
@@ -68,8 +68,45 @@
   padding: 1em 0;
 }
 
-.navbar .menu{
-  width: 20vw;
+.navbar .menu {
+  width: 40vw;
   display: flex;
   justify-content: space-between;
+}
+
+.portfolio {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  width: 400px;
+}
+
+.contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.img-container{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 1rem;
+}
+
+.img-container img{
+  width: 100%;
 }

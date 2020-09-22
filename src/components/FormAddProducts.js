@@ -25,25 +25,25 @@ function FormAddProducts(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label>Product Name</label>
-          <input type="text" name="productName" value={productName} 
+          <input className="form-control" type="text" name="productName" value={productName} 
             onChange={e => setProductName(e.target.value) } />
         </div>
-        <div>
+        <div className="form-group">
           <label>Description</label>
-          <input type="text" name="description" value={description} 
+          <input className="form-control" type="text" name="description" value={description} 
             onChange={e => setDescription(e.target.value) } />
         </div>
-        <div>
+        <div  className="form-group">
           <label>Price</label>
-          <input type="number" name="price" value={price} 
+          <input className="form-control" type="number" name="price" value={price} 
             onChange={e => setPrice(e.target.value) } />
-        </div>
-        <div>
+        </div >
+        <div className="form-group">
           <label>Stock</label>
-          <input type="number" name="stock" value={stock} 
+          <input className="form-control" type="number" name="stock" value={stock} 
             onChange={e => setStock(e.target.value) } />
         </div>
         <button>Submit</button>

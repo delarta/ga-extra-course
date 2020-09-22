@@ -38,7 +38,7 @@ function CartHooks() {
 
   return (
     <>
-      <FormAddProducts AddProduct={handleAddProduct} />
+      {/* <FormAddProducts AddProduct={handleAddProduct} /> */}
       <div className="cart-container">
         <div className="cart-content">
           <div className="products-container">

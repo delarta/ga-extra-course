@@ -9,9 +9,9 @@ function doSomething(input) {
 
 let numTen = doSomething(5) // 10
 
-let result = numTen + 5
+// let result = numTen + 5
 
-// console.log(result)
+// console.log(numTen)
 
 // ARROW FUNCTION
 const doSomethingElse = (input) => {

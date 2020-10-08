@@ -5,14 +5,18 @@ let str = " New String";
 
 let otherStr = "Something";
 
-otherStr = otherStr + str;
+otherStr += str;
+// otherStr = otherStr + str;
+
+// console.log(otherStr)
 
 // ARITHMETIC : + , - , / , * , % , ++ , --
-let y = 3;
-let x = 5;
+let y = 4;
 
 // let result = x + x * x / y;
-let result = x % y;
+// let result = x % y; //3
+
+// console.log(result)
 
 // if(x % 2 === 0){
 //   console.log("Genap")
@@ -20,10 +24,14 @@ let result = x % y;
 //   console.log("Ganjil")
 // }
 
-// console.log(x++);
-// console.log(x);
-// console.log(x++);
-// console.log(x);
+let x = 2;
+console.log(x); //2
+console.log(x++); //2 => 3
+console.log(x); // 3
+console.log(++x); //4
+console.log(++x); //5
+console.log(x++); //5
+console.log(x); //6
 
 // LOGICAL : || , && , !
 // OR, AND, NOT
@@ -47,8 +55,8 @@ let isHard = false || false;
 // COMPARISON : === , !==, == , != , > , < , >= , <=
 let num = 24;
 
-if (num !== "24") {
-  console.log("True!");
-} else {
-  console.log("False!");
-}
+// if (num !== "24") {
+//   console.log("True!");
+// } else {
+//   console.log("False!");
+// }

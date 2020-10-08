@@ -1,5 +1,5 @@
 // VARIABLES
-var newVar = "x";
+var newVar = `sdfsdfsd fgfggf`;
 
 let newVar2;
 const newVar3 = "x";
@@ -25,7 +25,7 @@ let otherNum = 3.14;
 let str = "Life";
 
 // Joined String
-let strJoined = str + " is Beautiful ";
+let strJoined = str + " is Beautiful, isn't it ?"; //life is beautiful
 
 // let otherStr = "Don't give up, " + strJoined + " " + num;
 
@@ -34,15 +34,15 @@ let strJoined = str + " is Beautiful ";
 let otherStr = `Don't give up, ${strJoined} ${num}`;
 
 // console.log(otherStr)
+// console.log(otherStr)
 
 // BOOLEAN (true, false)
 let isOpen = true;
 
-//
 // Falsy values are : 0, -0, NaN, undefined, null, ''
 let isTrue = "";
 
-// if(isTrue){
+// if(isOpen){
 //   console.log("Sesuatu")
 // }else{
 //   console.log("Falsy!")
@@ -56,7 +56,14 @@ let something = null;
 // indicates that a variable has not been initialized and the value is absent.
 let whoami;
 
+// console.log(whoami)
+
 // OBJECT
+
+// let animal = {
+//   name: "cat",
+//   breed: "anggora"
+// }
 
 let person = {
   name: "Joseph Joestar",
@@ -70,13 +77,34 @@ let person = {
   },
 };
 
-console.log(`${person.name} lives in ${person.address.city}`);
+console.log(person.friends)
+
+// console.log(person.name, person.age);
+
+// console.log(`${person.name} lives in ${person.address.city}`);
 
 // ARRAY
-let monsters = [
-  "Kikimore", 
-  0, 
-  { key: "value" }, 
-  null, 
-  "werewolf"
-];
+let monsters = ["Kikimore", 0, { key: "value" }, null, "werewolf"];
+
+let fruits = ["apple", "orange", "mango", "lemon"] //0, 1, 2 ,3
+
+// console.log(fruits)
+
+// LET n CONST
+
+// let primeNumber = 1; //let primeNumber be 1
+
+// primeNumber = 3;
+
+// console.log(primeNumber);
+
+// const pi = 3.14;
+
+// console.log(pi);
+
+
+// const url = "www.google.com"
+
+
+
+

@@ -23,16 +23,24 @@ let otherNum = 3.14;
 // STRINGS
 // Regular String
 let str = "Life";
+let strSingle = 'Life';
+let strBacktick = `Life`;
 
 // Joined String
-let strJoined = str + " is Beautiful, isn't it ?"; //life is beautiful
 
+let strA = "My name is";
+let strB = "Johnny"
+
+// let strJoined = str + " is Beautiful, isn't it ?"; //life is beautiful
+let strJoined = strA + strB + " I live in London" ; //life is beautiful
+let strBacktickJoined = `${strA} ${strB} I live in london`
 // let otherStr = "Don't give up, " + strJoined + " " + num;
 
 // Template Literal
 // Backtick ``
-let otherStr = `Don't give up, ${strJoined} ${num}`;
+// let otherStr = `Don't give up, ${strJoined} ${num}`;
 
+console.log(strBacktickJoined)
 // console.log(otherStr)
 // console.log(otherStr)
 
@@ -77,7 +85,7 @@ let person = {
   },
 };
 
-console.log(person.friends)
+// console.log(person.friends)
 
 // console.log(person.name, person.age);
 

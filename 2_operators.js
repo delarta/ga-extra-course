@@ -25,13 +25,13 @@ let y = 4;
 // }
 
 let x = 2;
-console.log(x); //2
-console.log(x++); //2 => 3
-console.log(x); // 3
-console.log(++x); //4
-console.log(++x); //5
-console.log(x++); //5
-console.log(x); //6
+// console.log(x); //2
+// console.log(x++); //2 => 3
+// console.log(x); // 3
+// console.log(++x); //4
+// console.log(++x); //5
+// console.log(x++); //5
+// console.log(x); //6
 
 // LOGICAL : || , && , !
 // OR, AND, NOT
@@ -48,15 +48,15 @@ console.log(x); //6
 // 0 OR 1 = 1
 // 1 OR 1 = 1
 
-let isHard = false || false;
+let isHard = false || false ;
 
 // console.log(isHard);
 
 // COMPARISON : === , !==, == , != , > , < , >= , <=
-let num = 24;
+let num = 45;
 
-// if (num !== "24") {
-//   console.log("True!");
-// } else {
-//   console.log("False!");
-// }
+if (num > 0) {
+  console.log("True!");
+} else {
+  console.log("False!");
+}

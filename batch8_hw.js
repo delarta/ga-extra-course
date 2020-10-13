@@ -104,26 +104,31 @@
 //   console.log("Bukan nama hari");
 // }
 
-let namaHari = [
-  "senin",
-  "selasa",
-  "rabu",
-  "kamis",
-  "jum'at",
-  "sabtu",
-  "minggu",
-];
+// let hari = "senin";
 
-let hariSekarang = "kamis";
-
-for (let i = 0; i < namaHari.length; i++) {
-  if (hariSekarang === namaHari[i]) {
-    if (i === 6) {
-      console.log(`Sekarang hari ${hariSekarang}`);
-      console.log(`Besok adalah hari ${namaHari[0]}`);
-    } else {
-      console.log(`Sekarang hari ${hariSekarang}`);
-      console.log(`Besok adalah hari ${namaHari[i + 1]}`);
-    }
+function whatDayAfter(hari) {
+  if (hari === "senin") {
+    return "Besok adalah hari selasa";
+  } else if (hari === "selasa") {
+    return "Besok adalah hari rabu";
+  } else if (hari === "rabu") {
+    return "Besok adalah hari kamis";
+  } else if (hari === "kamis") {
+    return "Besok adalah hari jum'at";
+  } else if (hari === "jum'at") {
+    return "Besok adalah hari sabtu";
+  } else if (hari === "sabtu") {
+    return "Besok adalah hari minggu";
+  } else if (hari === "minggu") {
+    return "Besok adalah hari senin";
+  } else {
+    return "Bukan nama hari";
   }
 }
+
+// case sensitive
+let day = "kamis"
+console.log(whatDayAfter(day))
+console.log(whatDayAfter("jum'at"))
+console.log(whatDayAfter("senin"))
+console.log(whatDayAfter("minggu"))

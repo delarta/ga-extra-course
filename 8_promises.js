@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 // let p = new Promise((resolve, reject) => {
 //   let sum = 1 + 2;

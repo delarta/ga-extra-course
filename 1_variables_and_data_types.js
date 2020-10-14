@@ -40,7 +40,7 @@ let strBacktickJoined = `${strA} ${strB} I live in london`
 // Backtick ``
 // let otherStr = `Don't give up, ${strJoined} ${num}`;
 
-console.log(strBacktickJoined)
+// console.log(strBacktickJoined)
 // console.log(otherStr)
 // console.log(otherStr)
 
@@ -49,6 +49,37 @@ let isOpen = true;
 
 // Falsy values are : 0, -0, NaN, undefined, null, ''
 let isTrue = "";
+
+let input;
+
+// let comparison = input || "Ini nilai nya"
+
+
+
+let PORT_NUMBER = input ? "Yes" : "No"; // ternary operator
+
+if(input){
+  console.log("yes")
+}else{
+  console.log("no")
+
+}
+
+console.log(PORT_NUMBER)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // if(isOpen){
 //   console.log("Sesuatu")

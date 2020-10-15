@@ -16,6 +16,36 @@ let person = {
   },
 };
 
+// console.log(`Hello my name is ${person.name} I'm ${person.age} years old, I live in ${person.address.city}`)
+
+const { name, age, address } = person;
+
+console.log(
+  `Hello my name is ${name} I'm ${age} years old, I live in ${address.city}`
+);
+
+let songs = ["Unthetered Angel", "Pale Blue Dot", "At Wits End"];
+
+const [ songA ] = songs;
+
+console.log(songs[1]);
+
+console.log(songA);
+
+// Object Deconstruct
+// console.log("Name : " , person.name)
+// console.log("Age : ", person.age)
+// console.log("Friend : ", person.friends[2])
+// console.log("City : ", person.address.city)
+
+// const { name, age, address } = person // Deconstruct
+
+// console.log(name)
+// console.log(age)
+// console.log(address.city)
+
+// console.log(`Hello my name is ${name} I'm ${age} years old, I live in ${address.city}`)
+
 // === Accessing object ===
 // console.log("Name : " , person.name)
 // console.log("Age : ", person.age)
@@ -36,7 +66,7 @@ let newPerson = {
   ...person,
   wife: "Suzy",
   superpower: "Hamon",
-}
+};
 
 // let newPerson = Object.assign(
 //   {
@@ -51,9 +81,6 @@ let newPerson = {
 // console.log(newPerson)
 let objKeys = Object.keys(person);
 
-
-
-
 // Get Values
 let objValues = Object.values(person);
 
@@ -64,27 +91,3 @@ let keyVal = Object.entries(person).map(([k, v]) => {
   // console.log(`keys : ${k}, value : ${v}`)
   return `keys : ${k}, value : ${v}`;
 });
-
-// console.log(keyVal)
-// console.log(objValues)
-
-// console.log(keys)
-// console.log(objValues)
-
-// Object Deconstruct
-// console.log("Name : " , person.name)
-// console.log("Age : ", person.age)
-// console.log("Friend : ", person.friends[2])
-// console.log("City : ", person.address.city)
-
-const { name, age, address } = person // Deconstruct
-
-console.log(name)
-console.log(age)
-console.log(address.city)
-
-
-
-
-
-// console.log(`Hello my name is ${name} I'm ${age} years old, I live in ${address.city}`)

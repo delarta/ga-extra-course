@@ -19,9 +19,9 @@ let monsters = [
 // console.log(monsters)
 
 // FOR Loops
-// for(let i = 0; i < monsters.length ; i++){
-//   console.log(monsters[i])
-// }
+for(let i = 0; i < monsters.length ; i++){
+  console.log(monsters[i])
+}
 
 // i = 0 ==> 0 ==> i + 1 = 1
 // i = 1 ==> 1 ==> i + 1 = 2

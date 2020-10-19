@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleOnClick()">click on me</button>
+    <div id="hasil" style="margin-top: 20px"></div>
+
+    <script>
+      // const handleOnClick = () => {
+      //   const firstName = "binar";
+      //   const lastName = "academy";
+      //   const fullName = `${firstName} ${lastName}`;
+
+      //   document.querySelector("#hasil").innerText = fullName;
+      // };
+
+      // const getFirstName = () => {
+      //   setTimeout(() => {
+      //     return "binar";
+      //   }, 3000);
+
+      // };
+
+      // const handleOnClick = () => {
+      //   const firstName = getFirstName(); //undefined
+      //   const lastName = "academy";
+      //   const fullName = `${firstName} ${lastName}`;
+
+      //   document.querySelector("#hasil").innerText = fullName;
+      // };
+
+      const getFirstName = (callback) => {
+        setTimeout(() => {
+          callback("binar");
+        }, 3000);
+      };
+
+      const getFullName = (callback) => {
+        callback("Glints", "academy");
+        // setTimeout(function(){
+        // }, 3000);
+      };
+
+      const handleOnClick = () => {
+        getFullName(function (firstName, lastName) {
+          const fullName = `${firstName} ${lastName}`;
+          document.querySelector("#hasil").innerText = fullName;
+        });
+      };
+    </script>
+  </body>
+</html>

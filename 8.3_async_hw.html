@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleOnClick()">Click on me</button>
+    <div id="hasil" style="margin-top: 20px"></div>
+
+    <script>
+      // const getUser = (id, callback) => {
+      //   setTimeout(() => {
+      //     if (!id) {
+      //       return callback(Error("Invalid ID"));
+      //     }
+
+      //     let response;
+      //     if (id > 10) {
+      //       response = {
+      //         sucess: false,
+      //         id: id,
+      //         message: "User Not Found!",
+      //       };
+      //     } else {
+      //       response = {
+      //         sucess: true,
+      //         id: id,
+      //         message: "User Found",
+      //       };
+      //     }
+
+      //     return callback(response);
+      //   }, 2000);
+      // };
+
+      // const handleOnClick = () => {
+      //   console.log("Clicked...");
+      //   getUser(9, (result) => {
+      //     const dataUser = result;
+      //     console.log(dataUser);
+      //   });
+      // };
+
+      // Promise Chaining
+
+      const getUser = (id) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (!id) {
+              reject(Error(`ID cannot equal to ${id}!`));
+            }
+
+            let response;
+            if (id > 10) {
+              response = {
+                success: false,
+                id: id,
+                message: "User Not Found!",
+              };
+            } else {
+              response = {
+                success: true,
+                id: id,
+                message: "User Found",
+              };
+            }
+            resolve(response);
+          }, 2000);
+        });
+      };
+
+      // const handleOnClick = () => {
+      //   console.log("Clicked...");
+      //   getUser(11)
+      //     .then((result) => {
+      //       const dataUser = result;
+      //       console.log(dataUser);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+      // };
+
+      // Promise.all
+      // const handleOnClick = () => {
+      //   console.log("Clicked...");
+      //   Promise.all([getUser(11)])
+      //     .then((response) => {
+      //       const dataUser = response[0];
+      //       console.log(dataUser);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+      // };
+
+      // Async-Await
+      const handleOnClick = async () => {
+        console.log("Clicked...");
+
+        try {
+          const dataUser = await getUser(12);
+          console.log(dataUser);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      // 1. Ubah studi kasus di modul pakai Promise.all
+      // - Pelajari Promise.all
+      // - https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-3-promise-819ce5d8b3c
+      // - https://www.youtube.com/watch?v=-Gbb8H3Dy08&t=3s
+      //
+      // 2. Convert ke:
+      // - Promise Chaining
+      // - Promise.all
+      // - Async-await
+      //
+      // deadline: jumat, 23 okt 2020, 23:59 wib
+      // kirim alamat repo ke fnoviandha@binar.co.id
+    </script>
+  </body>
+</html>

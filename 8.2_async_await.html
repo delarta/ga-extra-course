@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <title>Test Async Await</title>
+  </head>
+  <body>
+    <button onclick="showProduct()">Click on me</button>
+    <div id="hasil" style="margin-top: 20px"></div>
+
+    <script>
+      
+
+      const getAllProducts = () => {
+        const products = [
+        {
+          id: 1,
+          name: "Jaket Kulit",
+          harga: 500000,
+        },
+        {
+          id: 2,
+          name: "Selimut Tetangga",
+          harga: 10000,
+        },
+        {
+          id: 3,
+          name: "Makanan Kucing",
+          harga: 50000,
+        },
+      ];
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            return resolve(products);
+          }, 1000);
+        });
+      };
+
+      const getProductPriceAbove = (price, productList) => {
+        console.log([...productList.filter((product) => product.price >= price)])
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            return resolve([...productList.filter((product) => product.price > price)]);
+          }, 1000);
+        });
+      };
+
+      // Promise.all([
+      //   getAllProducts(),
+      //   getProductPriceAbove()
+      // ])
+
+      const showProduct = async () => {
+        console.log("Clicked")
+        try {
+          const productList = await getAllProducts();
+          console.log(productList)
+          
+          const productPriceFiltered = await getProductPriceAbove(
+            11000,
+            productList
+            );
+          console.log(productPriceFiltered)
+
+          for (let i = 0; i < productPriceFiltered.length; i++) {
+            document.querySelector("#hasil").innerText += `${productPriceFiltered[i]} \n`;
+          }
+        } catch (err) {
+
+        }
+      };
+
+      // const getFirstName = () => {
+      //   const promise = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       return true ? resolve("Binar") : reject(Error("Gagal"));
+      //     }, 2000);
+      //   });
+      //   return promise;
+      // };
+
+      // const getLastName = () => {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       return true ? resolve("Academy") : reject(Error("Gagal"));
+      //     }, 2000);
+      //   });
+      // };
+
+      // // Promise All
+      // const handleOnClick = () => {
+      //   console.log("Clicked....");
+
+      //   Promise.all([
+      //     getFirstName(),
+      //     getLastName()
+      //   ])
+      //     .then((messages) => {
+      //       const firstName = messages[0];
+      //       const lastName = messages[1];
+      //       const fullName = `${firstName} ${lastName}`;
+      //       document.querySelector("#hasil").innerText = fullName;
+      //     })
+      //     .catch((error) => {
+      //       document.querySelector("#hasil").innerText = "Error!";
+      //       console.log(error);
+      //     });
+      // };
+
+      // const handleOnClick = async () => {
+      //   console.log("Clicked....");
+
+      //   getFirstName()
+      //     .then((first) => {
+      //       getLastName().then((last) => {
+      //         const fullName = `${first} ${last}`;
+      //         document.querySelector("#hasil").innerText = fullName;
+      //       });
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+
+      // };
+
+      // ES5
+      // async function handleOnClick() {
+
+      // }
+
+      // const handleOnClick = async () => {
+      //   console.log("Clicked....");
+      //   try {
+      //     const firstName = await getFirstName();
+      //     const lastName = await getLastName();
+      //     const fullName = `${firstName} ${lastName}`;
+
+      //     document.querySelector("#hasil").innerText = fullName;
+      //   } catch (error) {
+      //     // do something untuk menampilkan pesan error
+      //     document.querySelector("#hasil").innerText = "Error!";
+      //     console.log(error);
+      //   }
+      // };
+    </script>
+  </body>
+</html>

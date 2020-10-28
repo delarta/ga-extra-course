@@ -3,30 +3,28 @@
     <title>Test Async Await</title>
   </head>
   <body>
-    <button onclick="showProduct()">Click on me</button>
+    <button onclick="handleOnClick()">Click on me</button>
     <div id="hasil" style="margin-top: 20px"></div>
 
     <script>
-      
-
       const getAllProducts = () => {
         const products = [
-        {
-          id: 1,
-          name: "Jaket Kulit",
-          harga: 500000,
-        },
-        {
-          id: 2,
-          name: "Selimut Tetangga",
-          harga: 10000,
-        },
-        {
-          id: 3,
-          name: "Makanan Kucing",
-          harga: 50000,
-        },
-      ];
+          {
+            id: 1,
+            name: "Jaket Kulit",
+            harga: 500000,
+          },
+          {
+            id: 2,
+            name: "Selimut Tetangga",
+            harga: 10000,
+          },
+          {
+            id: 3,
+            name: "Makanan Kucing",
+            harga: 50000,
+          },
+        ];
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             return resolve(products);
@@ -35,10 +33,14 @@
       };
 
       const getProductPriceAbove = (price, productList) => {
-        console.log([...productList.filter((product) => product.price >= price)])
+        console.log([
+          ...productList.filter((product) => product.price >= price),
+        ]);
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            return resolve([...productList.filter((product) => product.price > price)]);
+            return resolve([
+              ...productList.filter((product) => product.price > price),
+            ]);
           }, 1000);
         });
       };
@@ -49,61 +51,59 @@
       // ])
 
       const showProduct = async () => {
-        console.log("Clicked")
+        console.log("Clicked");
         try {
           const productList = await getAllProducts();
-          console.log(productList)
-          
+          console.log(productList);
+
           const productPriceFiltered = await getProductPriceAbove(
             11000,
             productList
-            );
-          console.log(productPriceFiltered)
+          );
+          console.log(productPriceFiltered);
 
           for (let i = 0; i < productPriceFiltered.length; i++) {
-            document.querySelector("#hasil").innerText += `${productPriceFiltered[i]} \n`;
+            document.querySelector(
+              "#hasil"
+            ).innerText += `${productPriceFiltered[i]} \n`;
           }
-        } catch (err) {
-
-        }
+        } catch (err) {}
       };
 
-      // const getFirstName = () => {
-      //   const promise = new Promise((resolve, reject) => {
-      //     setTimeout(() => {
-      //       return true ? resolve("Binar") : reject(Error("Gagal"));
-      //     }, 2000);
-      //   });
-      //   return promise;
-      // };
+      const getFirstName = () => {
+        const promise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            return true ? resolve("Binar") : reject(Error("Gagal First Name"));
+          }, 2000);
+        });
+        return promise;
+      };
 
-      // const getLastName = () => {
-      //   return new Promise((resolve, reject) => {
-      //     setTimeout(() => {
-      //       return true ? resolve("Academy") : reject(Error("Gagal"));
-      //     }, 2000);
-      //   });
-      // };
+      const getLastName = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            return true ? resolve("Academy") : reject(Error("Gagal Last Name"));
+          }, 2000);
+        });
+      };
 
       // // Promise All
-      // const handleOnClick = () => {
-      //   console.log("Clicked....");
+      const handleOnClick = () => {
+        console.log("Clicked....");
 
-      //   Promise.all([
-      //     getFirstName(),
-      //     getLastName()
-      //   ])
-      //     .then((messages) => {
-      //       const firstName = messages[0];
-      //       const lastName = messages[1];
-      //       const fullName = `${firstName} ${lastName}`;
-      //       document.querySelector("#hasil").innerText = fullName;
-      //     })
-      //     .catch((error) => {
-      //       document.querySelector("#hasil").innerText = "Error!";
-      //       console.log(error);
-      //     });
-      // };
+        Promise.all([
+          getFirstName(), 
+          getLastName()
+        ])
+        .then((response) => {
+          const fullName = `${response[0]} ${response[1]}`;
+          document.querySelector("#hasil").innerText = fullName;
+        })
+        .catch(err => {
+          console.log(err)
+        })
+
+      };
 
       // const handleOnClick = async () => {
       //   console.log("Clicked....");

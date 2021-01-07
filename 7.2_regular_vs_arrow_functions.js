@@ -41,17 +41,14 @@ const whatDayAfter = hari => {
 
 function sum(num1, num2) {
   if(typeof num1 === "number" && typeof num2 === "number"){
-
     return num1 + num2;
   }else{
     return "Not a";
-
   }
 }
 
-const sumArrow = (num1, num2) => num1 + num2;
+const sumArrow = (num1, num2) => typeof num1 === "number" && typeof num2 === "number" ? num1 + num2 : "Not a Number"
 
 
-
-console.log(sumArrow(100, 40));
+console.log(sumArrow(100, 20));
 console.log(whatDayAfter("senin"));

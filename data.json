@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Joseph Joestar",
+    "age": 19,
+    "country": "England",
+    "married": true,
+    "friends": ["Caesar Zeppeli", "Lisa Lisa", "Speedwagon"],
+    "address": {
+      "city": "London",
+      "block": 14
+    }
+  }
+]

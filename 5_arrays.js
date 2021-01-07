@@ -8,7 +8,7 @@ let monsters = ["Kikimore", "Vampire", "Ekkimara", "Nightwraith", "Werewolf"];
 // monsters.push("Chort")
 
 // Spread Operator way
-monsters = [...monsters, "Ghouls", "Chort", "Botch", "Dragon", ]
+// monsters = [...monsters, "Ghouls", "Chort", "Botch", "Dragon", ]
 
 // console.log(monsters)
 
@@ -26,13 +26,15 @@ monsters = [...monsters, "Ghouls", "Chort", "Botch", "Dragon", ]
 // remove first element from an array
 // monsters.shift()
 
-monsters = monsters.filter((monster) => {
-  if (monster !== "Ekkimara") {
-    return true;
-  } else {
-    return false;
-  }
-});
+// monsters.splice(1,2)
+
+// monsters = monsters.filter((monster) => {
+//   if (monster !== "Ekkimara") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// });
 console.log(monsters);
 
 // console.log(monsters)
@@ -41,10 +43,12 @@ console.log(monsters);
 // let newMonster = []
 
 // for (let i = 0; i < monsters.length; i++) {
-//   if (i !== 1) {
-//     newMonster.push(monsters[i]); //["Kikimore", "Ekkimara", "Nightwraith", Werewolf]
+//   if(monsters[i] !== "Ekkimara"){
+//     newMonster.push(monsters[i])
 //   }
 // }
+
+// console.log(newMonster)
 
 // scope
 // for(let i = 10; i >= 0; i = i - 2){

@@ -11,17 +11,49 @@
 // }
 
 
-let person = {
-  name: "Jonathan",
-  age: 17,
-  address: "Egypt",
-  displayPerson: function(){
-    return `His name is ${this.name}, he is ${this.age} years old, he lives in ${this.address}`
-  },
-  displayName: function(){
-    return `His name is ${this.name}`
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let person = {
+//   name: "Dio Brando",
+//   age: 100,
+//   address: "Egypt",
+//   displayPerson: function(){
+//     return `His name is ${this.name}, he is ${this.age} years old, he lives in ${this.address}`
+//   },
+//   displayName: function(){
+//     return `His name is ${this.name}`
+//   }
+// }
+
+
+// console.log(person.displayPerson())
+// console.log(person.displayName())
+
+
+
+
+
+
+
+
+
+
 
 // console.log(person.displayName())
 
@@ -42,12 +74,15 @@ class Animal {
     console.log(`${this.species} goes ${this.sound}`)
   }
 
+  changeName(name){
+    return this.name = name
+  }
+
   static isAnimal(animal){
     if(animal === "cat"){
       console.log(`${animal} is an animal`)
     }else{
       console.log(`${animal} is NOT an animal`)
-      
     }
   }
 
@@ -76,15 +111,30 @@ class Dog extends Animal {
 }
 
 let Cathy = new Cat("Cathy", 4, "Cat", "Meow", "Persian")
+
+// Cathy.showInfo()
+// Cathy.showBreed()
+// Cathy.showSound()
+
+
 let Dogthor = new Dog("Dogthor", 4, "Dog", "Woof", "Bulldog")
 
-Cathy.showInfo()
+
+Dogthor.name = "Doggy"
+
+
+Dogthor.showInfo()
+Dogthor.changeName("Mona")
+
+// Dogthor.showBreed()
+// Dogthor.showSound()
+
+// Cathy.showInfo()
 // Cathy.showSound()
 
 // Dogthor.showInfo()
 // Dogthor.showSound()
 
-// Cathy.isAnimal()
 
 
 // Dog.isAnimal("cat");

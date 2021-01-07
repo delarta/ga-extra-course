@@ -1,8 +1,13 @@
 // VARIABLES
-var newVar = `sdfsdfsd fgfggf`;
+var newVar = "Variable Baru";
 
-let newVar2;
-const newVar3 = "x";
+let nama = "Delarta";
+
+const gender = "male";
+
+nama = "Joni";
+
+// console.log(gender)
 
 // Primitive data types : Number, String, Boolean, Symbol
 // Special types : null, undefined
@@ -12,7 +17,7 @@ const newVar3 = "x";
 // Every Number is a float, but depend on the writting
 
 // 1.5 , 4.0 float
-// 4 integer
+// 4 , 10 , 11 integer
 
 // Integer
 let num = 10;
@@ -23,17 +28,27 @@ let otherNum = 3.14;
 // STRINGS
 // Regular String
 let str = "Life";
-let strSingle = 'Life';
-let strBacktick = `Life`;
+let strSingle = "is Beautiful";
+
+let strNum = "10";
+
+let resultStr = strNum + num;
+
+// console.log(resultStr)
+
+let strJoin = str + " " + strSingle + ", isn't it? " + num;
+// "Life is Beautiful"
+
+let strBacktick = `${str} ${strSingle}, isn't it? ${num}`;
 
 // Joined String
 
 let strA = "My name is";
-let strB = "Johnny"
+let strB = "Johnny";
 
 // let strJoined = str + " is Beautiful, isn't it ?"; //life is beautiful
-let strJoined = strA + strB + " I live in London" ; //life is beautiful
-let strBacktickJoined = `${strA} ${strB} I live in london`
+let strJoined = strA + strB + " I live in London"; //life is beautiful
+
 // let otherStr = "Don't give up, " + strJoined + " " + num;
 
 // Template Literal
@@ -45,46 +60,18 @@ let strBacktickJoined = `${strA} ${strB} I live in london`
 // console.log(otherStr)
 
 // BOOLEAN (true, false)
+
 let isOpen = true;
 
 // Falsy values are : 0, -0, NaN, undefined, null, ''
 let isTrue = "";
 
-let input;
+// let input = "asdhgajsd";
 
-// let comparison = input || "Ini nilai nya"
-
-
-
-let PORT_NUMBER = input ? "Yes" : "No"; // ternary operator
-
-if(input){
-  console.log("yes")
-}else{
-  console.log("no")
-
-}
-
-console.log(PORT_NUMBER)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if(isOpen){
-//   console.log("Sesuatu")
+// if(input){
+//   console.log("yes")
 // }else{
-//   console.log("Falsy!")
+//   console.log("no")
 // }
 
 // NULL
@@ -95,14 +82,13 @@ let something = null;
 // indicates that a variable has not been initialized and the value is absent.
 let whoami;
 
-// console.log(whoami)
-
 // OBJECT
 
-// let animal = {
-//   name: "cat",
-//   breed: "anggora"
-// }
+let animal = {
+  type: "Cat",
+  name: "Justin",
+  breed: "Anggora",
+};
 
 let person = {
   name: "Joseph Joestar",
@@ -116,34 +102,46 @@ let person = {
   },
 };
 
-// console.log(person.friends)
-
-// console.log(person.name, person.age);
-
-// console.log(`${person.name} lives in ${person.address.city}`);
-
 // ARRAY
-let monsters = ["Kikimore", 0, { key: "value" }, null, "werewolf"];
+// let monsters = ["Kikimore", 0, { key: "value" }, null, "werewolf"];
 
-let fruits = ["apple", "orange", "mango", "lemon"] //0, 1, 2 ,3
+let animals = ["Cat", "Dog", "Turtle"];
 
-// console.log(fruits)
+let oddNum = [1, 3, 5, 7];
 
-// LET n CONST
+let persons = [
+  {
+    name: "Joseph Joestar",
+    age: 19,
+    country: "England",
+    married: true,
+    friends: ["Caesar Zeppeli", "Lisa Lisa", "Speedwagon"],
+    address: {
+      city: "London",
+      block: 14,
+    },
+  },
+  {
+    name: "Jonathan Joestar",
+    age: 17,
+    country: "England",
+    married: true,
+    friends: ["Caesar Zeppeli", "Lisa Lisa", "Speedwagon"],
+    address: {
+      city: "Paris",
+      block: 14,
+    },
+  },
+];
 
-// let primeNumber = 1; //let primeNumber be 1
+console.log(persons[1].name)
+console.log(persons[1].age)
+console.log(persons[1].address.city)
+console.log(persons[1].friends[1])
 
-// primeNumber = 3;
+let fruits = ["apple", "orange", "mango", "lemon"]; //0, 1, 2 ,3
 
-// console.log(primeNumber);
-
-// const pi = 3.14;
-
-// console.log(pi);
-
-
-// const url = "www.google.com"
-
-
-
-
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+console.log(fruits[3]);

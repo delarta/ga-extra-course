@@ -11,7 +11,7 @@ class Person {
   }
 
   static get amount() {
-    Person._amount = Person._amount || 0;
+    // Person._amount = Person._amount || 0;
     return Person._amount;
   }
 
@@ -52,7 +52,12 @@ const personData = {
 
 const john = new Person(personData);
 
+john._amount = 100
+
+
+john.fullName = "Shinpachi Shimura"
 console.log(john.fullInfo); // john doe ?
+console.log("Person Amount: ",Person.amount);
 
 const roger = new Person({
   firstName: "Roger",
@@ -61,6 +66,7 @@ const roger = new Person({
 });
 
 console.log(roger.fullInfo); // john doe ?
+console.log("Person Amount: ",Person.amount);
 
 
 const jotaro = new Person({
@@ -72,13 +78,21 @@ const jotaro = new Person({
 console.log(jotaro.fullInfo); // john doe ?
 
 
-const josuke = new Person({
-  firstName: "Josuke",
-  lastName: "Higshikata",
-  job: new Job("Tokped", "Software Architecture", 2000000),
-});
+// const josuke = new Person({
+//   firstName: "Josuke",
+//   lastName: "Higshikata",
+//   job: new Job("Tokped", "Software Architecture", 2000000),
+// });
 
-console.log(josuke.fullInfo); // john doe ?
+// console.log(josuke.fullInfo); // john doe ?
+
+
+
+console.log("Person Amount: ",Person.amount);
+
+
+
+
 
 // console.log(john.firstNames) //output: John
 // console.log(john.lastName) //output: Doe

@@ -6,8 +6,8 @@ let monsters = [
   "Ekkimara",
   "Nightwraith",
   "Werewolf",
-  "Bobo",
-  "Rong rong",
+  "Bona",
+  "Rong Rong",
 ];
 
 // console.log(monsters[0])
@@ -19,10 +19,32 @@ let monsters = [
 // console.log(monsters)
 
 // FOR Loops
-for(let i = 0; i < monsters.length ; i++){
-  console.log(monsters[i])
-}
+// for(let a = 0; a < 10; a++){
+//   console.log(a)
+// }
+// for(let a = 9; a >= 0; a--){
+//   console.log(a)
+// }
 
+// console.log(monsters.length)
+// for (let a = 0; a < monsters.length; a++) {
+//   if (monsters[a] === "Werewolf") {
+//     break;
+//   }
+//   console.log(monsters[a]);
+// }
+
+// for(let i = 1; i <= 10; i++){
+//   if(i%2 === 0){
+//     console.log(`${i} Genap`)
+//   }else{
+//     console.log(`${i} Ganjil`)
+//   }
+// }
+
+// for(let i = monsters.length - 1; i >= 0; i--){
+//   console.log(monsters[i])
+// }
 // i = 0 ==> 0 ==> i + 1 = 1
 // i = 1 ==> 1 ==> i + 1 = 2
 // ...
@@ -31,19 +53,25 @@ for(let i = 0; i < monsters.length ; i++){
 // i = 10
 
 // WHILE Loop
-// let x = 5;
+let x = 0;
 
-// while(x < monsters.length)
-// {
-//   console.log(monsters[x]);
-//   x++;
-// }
+let isMonsterFound = false;
+
+while (x < monsters.length) {
+  if (monsters[x] === "Nightwraith") {
+    isMonsterFound = true;
+    // console.log(`${monsters[x]}, is found!`);
+  } else {
+    console.log(monsters[x]);
+  }
+  x++;
+}
 
 // DO WHILE
-// let y = 5;
+let y = 100;
 
 // do {
-//   console.log(monsters[y]);
+//   console.log(monsters[0]);
 //   y++;
 // } while (y < monsters.length);
 

@@ -10,11 +10,31 @@ otherStr += str;
 
 // console.log(otherStr)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ARITHMETIC : + , - , / , * , % , ++ , --
 let y = 4;
 
+let x = 8;
+
 // let result = x + x * x / y;
-// let result = x % y; //3
+let result = x % y;
 
 // console.log(result)
 
@@ -24,14 +44,15 @@ let y = 4;
 //   console.log("Ganjil")
 // }
 
-let x = 2;
-// console.log(x); //2
-// console.log(x++); //2 => 3
-// console.log(x); // 3
-// console.log(++x); //4
-// console.log(++x); //5
-// console.log(x++); //5
-// console.log(x); //6
+// x = 8
+console.log(++x); //9
+console.log(x); //9 
+// console.log(++x); //10
+// console.log(x++); //10
+// console.log(++x); //12
+
+
+
 
 // LOGICAL : || , && , !
 // OR, AND, NOT
@@ -48,14 +69,14 @@ let x = 2;
 // 0 OR 1 = 1
 // 1 OR 1 = 1
 
-let isHard = false || false ;
+let isHard = true && true ;
 
 // console.log(isHard);
 
 // COMPARISON : === , !==, == , != , > , < , >= , <=
 let num = 45;
 
-if (num > 0) {
+if (num > 1) {
   console.log("True!");
 } else {
   console.log("False!");

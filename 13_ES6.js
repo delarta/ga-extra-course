@@ -177,7 +177,7 @@ let monstersDetail = [
   },
 ];
 
-console.log(monstersDetail)
+console.log(monstersDetail);
 // for (let i = 0; i < monstersDetail.length; i++) {
 //   console.log(monstersDetail[i].type)
 // }
@@ -191,7 +191,9 @@ let monstersType = monstersDetail.map((monster) => monster.type);
 
 // filter
 
-let monstersNoVampire = monstersDetail.filter((monster) => monster.name === "Ekimmara");
+let monstersNoVampire = monstersDetail.filter(
+  (monster) => monster.name === "Ekimmara"
+);
 
 // console.log(monstersNoVampire)
 
@@ -208,16 +210,51 @@ let findOne = monstersDetail.find((monster) => monster.name === "Ekimmara");
 //   console.log(info)
 // }
 
-
 // SPREAD
 
 // monsters.push("Griffin")
 
-// monsters = ["Gorgon", ...monsters]
+monsters = ["Gorgon", ...monsters];
 
-console.log(monsters)
+// console.log(monsters)
 
-const [monstA, monstB, ...otherMonster ] = monsters
-console.log(monstA)
-console.log(monstB)
-console.log(otherMonster)
+const [monstA, monstB, ...otherMonster] = monsters;
+// console.log(monstA)
+// console.log(monstB)
+// console.log(otherMonster)
+
+let person = {
+  name: "Joseph Joestar", //property = key + value
+  age: 19,
+  country: "England",
+  married: true,
+  friends: ["Caesar Zeppeli", "Lisa Lisa", "Speedwagon"],
+  address: {
+    city: "London",
+    block: 14,
+  },
+};
+
+let additionalInfo = {
+  wifeName: "Suzy",
+  weight: 80,
+  a: "yes",
+  name: "Johnny Joestar",
+};
+
+person = { ...person, ...additionalInfo };
+
+// Object.assign( person, additionalInfo)
+
+// console.log(person)
+
+const multiplyByTwo = (...arrNum) => {
+  console.log(arrNum);
+  for (let i = 0; i < arrNum.length; i++) {
+    console.log(arrNum[i] * 2);
+  }
+};
+
+// multiplyByTwo(5, 3, 70)
+// multiplyByTwo([5, 3, 70])
+multiplyByTwo(5, 3, 70, 9, 32, 12);

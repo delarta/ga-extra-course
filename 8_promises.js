@@ -1,50 +1,64 @@
 // const fetch = require("node-fetch");
 
-// const janjiCallback = (callback1, callback2) => {
-//   const weather = "clear"
-//   if (weather !== "rain") {
-//     return callback1({
-//       message: "Berangkat",
-//       status: "OK",
-//     });
-//   } else {
-//     return callback2({
-//       message: "Mager",
-//       status: "GAGAL",
-//     });
+// Resolve, Reject, Pending
+
+let weather = "cloudy";
+let loc = "Pool";
+
+// let vacationPlan = (weatherInfo, location) =>
+//   new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (weatherInfo === "sunny") {
+//         resolve({ weatherInfo, location });
+//       } else if (weatherInfo === "cloudy") {
+//         resolve({ weatherInfo, location });
+//       } else {
+//         reject("Stay at Home");
+//       }
+//     }, 1500);
+//   });
+
+// Promise Chaining
+
+// vacationPlan("sunny", "beach")
+// .then((message) => {
+//   let result = `Weather is ${message.weatherInfo}`
+//   return result
+// })
+// .then((finalWeather) => {
+//   console.log(finalWeather)
+// })
+// .catch((error)=>{
+//   console.log(error)
+// })
+
+// ASYNC
+
+// async function vacationAsync() {
+//   try {
+//     let vacationInfo = await vacationPlan("qweasd", "skydiving");
+//     let result = `Weather is ${vacationInfo.weatherInfo}`;
+
+//     console.log(result);
+//   } catch (err) {
+//     alert(err);
 //   }
 // }
 
-// // janjiCallback(()=> {
+// const vacationAsync = async () => {
+//   try {
+//     let vacationInfo = await vacationPlan("asdasd", "skydiving");
+//     let result = `Weather is ${vacationInfo.weatherInfo}`;
 
-// // })
-
-// const janji = new Promise((resolve, reject) => {
-//   const weather = "rain";
-//   if (weather !== "rain") {
-//     return resolve({
-//       message: "Berangkat",
-//       status: "OK",
-//     });
-//   } else {
-//     return reject({
-//       message: "Mager",
-//       status: "GAGAL",
-//     });
+//     console.log(result);
+//   } catch (message) {
+//     alert(message);
 //   }
-// });
+// }
 
-// // promise chain
-// janji
-//   .then((res) => {
-//     console.log(res.message);
-//   })
-//   .then(() => {
-//     console.log("Senang senang yee!")
-//   })
-//   .catch((err) => {
-//     console.log(err.message);
-//   });
+// vacationAsync();
+
+// vacationPlanAsync("sunny", "Mountain");
 
 // let p = new Promise((resolve, reject) => {
 //   let sum = 1 + 1;
@@ -79,26 +93,68 @@
 //   .then(() => console.log("Jalan2 ke pantai"))
 //   .catch((message) => console.log(message));
 
+// FETCH
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then((response) => {
+  return response.json()
+})
+.then((data) => console.log(data.slice(0,10)))
+.catch(err => console.log(err))
+
+
+// const getData = async () => {
+//   try{
+//     let response = await fetch("https://jsonplaceholder.typicode.com/posts")
+//     let data = await response.json();
+//     console.log(data)
+//   }catch(err){
+//     console.log(err)
+//   }
+// }
+
+// getData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fetch("https://ghibliapi.herokuapp.com/films")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
 // const catFactsAPI = "https://cat-fact.herokuapp.com";
 
-fetch(`${catFactsAPI}/facts/random?animal_type=cat&amount=1`)
-  .then((response) => {
-    return response.json();
-  })
-  .then((json) => {
-    console.log(json.text);
-  });
+// fetch(`${catFactsAPI}/facts/random?animal_type=cat&amount=1`)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((json) => {
+//     console.log(json.text);
+//   });
 
+// const getCatFacts = async () => {
+//   const catFactsAPI = "https://cat-fact.herokuapp.com";
+//   try{
+//     const response = await fetch(`${catFactsAPI}/facts/random?animal_type=cat&amount=1`)
+//     const json = await response.json()
+//     console.log(json.text)
+//   }catch(err){
+//     console.log("Error")
+//   }
+// }
 
-const getCatFacts = async () => {
-  const catFactsAPI = "https://cat-fact.herokuapp.com";
-  try{
-    const response = await fetch(`${catFactsAPI}/facts/random?animal_type=cat&amount=1`)
-    const json = await response.json()
-    console.log(json.text)
-  }catch(err){
-    console.log("Error")
-  }
-}
-
-getCatFacts()
+// getCatFacts()
